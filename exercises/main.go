@@ -23,13 +23,19 @@ func mult(n1 int, n2 int) int {
 
 func multRec(n1 int, n2 int) int {
 
-	r := 0
+	/* 	r := 0
 
-	if n2 >= 1 {
-		r = n1 + multRec(n1, n2-1)
+	   	if n2 >= 1 {
+	   		r = n1 + multRec(n1, n2-1)
+	   	}
+
+	   	return r */
+
+	if n2 == 0 {
+		return 0
 	}
 
-	return r
+	return n1 + multRec(n1, n2-1)
 }
 
 func powMult(n1 int, n2 int) int {
