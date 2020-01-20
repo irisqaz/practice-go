@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 type node struct {
@@ -11,22 +10,13 @@ type node struct {
 }
 
 func (n *node) String() string {
-
-	r := "["
-
-	for curr := n; curr != nil; curr = curr.next {
-		r = r + strconv.Itoa(curr.data)
-		if curr.next != nil {
-			r = r + ", "
-		}
-	}
-
-	return r + "]"
+	return fmt.Sprintf("%v", n.data)
 }
 
 type list struct {
 	head *node
 	tail *node
+	size int
 }
 
 func (l list) String() string {
@@ -34,13 +24,41 @@ func (l list) String() string {
 	r := "["
 
 	for curr := l.head; curr != nil; curr = curr.next {
-		r = r + strconv.Itoa(curr.data)
+		r = r + curr.String()
 		if curr.next != nil {
 			r = r + ", "
 		}
 	}
 
 	return r + "]"
+}
+
+func (l *list) length() int {
+	return l.size
+}
+
+func (l *list) addBack(data int) {
+	n := node{data, nil}
+	if l.length() == 0 {
+		l.head = &n
+		l.tail = &n
+	} else {
+		l.tail.next = &n
+		l.tail = &n
+	}
+	l.size++
+}
+
+func (l *list) addFront(data int) {
+	n := node{data: data}
+	if l.length() == 0 {
+		l.head = &n
+		l.tail = &n
+	} else {
+		n.next = l.head
+		l.head = &n
+	}
+	l.size++
 }
 
 func main() {
@@ -66,4 +84,16 @@ func main() {
 	l.head = &node{11, l.head}
 	l.head = &node{12, l.head}
 	fmt.Println(l)
+
+	var l2 *list = &list{}
+	fmt.Println("Empty list l2:", l2)
+	l2.addFront(20)
+	l2.addFront(21)
+	l2.addFront(22)
+	l2.addBack(30)
+	l2.addBack(31)
+	l2.addBack(32)
+	fmt.Println("l2:", l2)
+	fmt.Println("length:", l2.length())
+
 }
