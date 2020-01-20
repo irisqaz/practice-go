@@ -12,13 +12,16 @@ type node struct {
 
 func (n *node) String() string {
 
-	r := ""
+	r := "["
 
 	for curr := n; curr != nil; curr = curr.next {
-		r = r + strconv.Itoa(curr.data) + "->"
+		r = r + strconv.Itoa(curr.data)
+		if curr.next != nil {
+			r = r + ", "
+		}
 	}
 
-	return r
+	return r + "]"
 }
 
 func main() {
@@ -29,4 +32,12 @@ func main() {
 	n.next = &node{99, nil}
 	n.next.next = &node{76, nil}
 	fmt.Println(&n)
+
+	var n2 *node
+	fmt.Println("Empty list n2: ", n2)
+
+	n2 = &node{1, n2}
+	n2 = &node{2, n2}
+	n2 = &node{3, n2}
+	fmt.Println(n2)
 }
