@@ -30,6 +30,16 @@ func main() {
 	arr2 = []int{11, 33, 44}
 	travIter(arr2)
 	fmt.Println()
+
+	fmt.Println("Recursive2 empty")
+	arr3 := []int{}
+	travRec2(arr3)
+	fmt.Println()
+
+	fmt.Println("Recursive2")
+	arr3 = []int{11, 33, 44}
+	travRec2(arr3)
+	fmt.Println()
 }
 
 func travIter(arr []int) {
@@ -46,5 +56,12 @@ func arrRec(arr []int, i int) {
 	if i >= 0 && i < len(arr) {
 		fmt.Print(arr[i], " ")
 		arrRec(arr, i+1)
+	}
+}
+
+func travRec2(arr []int) {
+	if len(arr) > 0 {
+		fmt.Print(arr[0], " ")
+		travRec2(arr[1:])
 	}
 }
