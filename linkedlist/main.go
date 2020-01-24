@@ -97,23 +97,23 @@ func main() {
 	fmt.Println("length:", l2.length())
 
 	fmt.Println("Traverse Iteratively l2")
-	travIter(l2.head)
+	l2.head.travIter()
 	fmt.Println()
 
 	fmt.Println("Traverse Recursively l2")
-	travRec(l2.head)
+	l2.head.travRec()
 	fmt.Println()
 }
 
-func travIter(n *node) {
+func (n *node) travIter() {
 	for curr := n; curr != nil; curr = curr.next {
 		fmt.Print(curr.data, " ")
 	}
 }
 
-func travRec(n *node) {
+func (n *node) travRec() {
 	if n != nil {
 		fmt.Print(n.data, " ")
-		travRec(n.next)
+		n.next.travRec()
 	}
 }
