@@ -96,4 +96,24 @@ func main() {
 	fmt.Println("l2:", l2)
 	fmt.Println("length:", l2.length())
 
+	fmt.Println("Traverse Iteratively l2")
+	travIter(l2.head)
+	fmt.Println()
+
+	fmt.Println("Traverse Recursively l2")
+	travRec(l2.head)
+	fmt.Println()
+}
+
+func travIter(n *node) {
+	for curr := n; curr != nil; curr = curr.next {
+		fmt.Print(curr.data, " ")
+	}
+}
+
+func travRec(n *node) {
+	if n != nil {
+		fmt.Print(n.data, " ")
+		travRec(n.next)
+	}
 }
