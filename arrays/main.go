@@ -21,6 +21,16 @@ func main() {
 	travIter(arr1)
 	fmt.Println()
 
+	fmt.Println("Iterative2 empty")
+	arr4 := []int{}
+	travIter2(arr4)
+	fmt.Println()
+
+	fmt.Println("Iterative2")
+	arr4 = []int{11, 33, 44}
+	travIter2(arr4)
+	fmt.Println()
+
 	fmt.Println("Recursive empty")
 	arr2 := []int{}
 	travIter(arr2)
@@ -45,6 +55,12 @@ func main() {
 func travIter(arr []int) {
 	for i := 0; i < len(arr); i++ {
 		fmt.Print(arr[i], " ")
+	}
+}
+
+func travIter2(arr []int) {
+	for _, val := range arr {
+		fmt.Print(val, " ")
 	}
 }
 
