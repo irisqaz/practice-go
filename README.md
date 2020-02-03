@@ -16,4 +16,5 @@ Practice the exercises in the following sequence:
 - [ ] count
 - [ ] sum
 - [ ] joinStr
+- [ ] intToStr
 
