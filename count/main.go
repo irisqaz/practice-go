@@ -6,24 +6,28 @@ import (
 	"github.com/irisqaz/practice-go/test"
 )
 
-// InFirst returns true if val is the first element of nums
-func InFirst(nums []int, val int) bool {
+// Count returns the count of val in nums
+func Count(nums []int, val int) int {
 
-	return true
+	return 0
 }
 func main() {
 
 	fmt.Println()
-	fmt.Println(test.Rjustified(41, test.Signature(InFirst)))
+	fmt.Println(test.Rjustified(41, test.Signature(Count)))
 	for i := 1; i <= 5; i++ {
 		N := test.NextInt(0, 5)
-		input := test.NextInts(0, 100, N)
-		val := test.NextInt(0, 100)
+		input := test.NextInts(0, 50, N)
+		val := test.NextInt(0, 50)
 		if N > 0 && N%2 == 0 {
+			mid := N / 2
+			last := N - 1
+			input[mid] = val
+			input[last] = val
 			input[0] = val
 		}
 
-		got := InFirst(input, val)
+		got := Count(input, val)
 		want := solution(input, val)
 		isCorrect := test.Equal(got, want)
 
@@ -48,15 +52,14 @@ func printResult(input []int, val int, got, want interface{}, isCorrect bool) {
 	fmt.Println()
 }
 
-func solution(nums []int, val int) bool {
-	/*
-		r := false
-		if len(nums) > 0 {
-			if val == nums[0] {
-				r = true
-			}
+func solution(nums []int, val int) int {
+	count := 0
+	last := len(nums) - 1
+	for i := 0; i <= last; i++ {
+		if nums[i] == val {
+			count++
 		}
-		return r
-	*/
-	return len(nums) > 0 && val == nums[0]
+	}
+
+	return count
 }

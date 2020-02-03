@@ -50,13 +50,15 @@ func printResult(input []int, val int, got, want interface{}, isCorrect bool) {
 }
 
 func solution(nums []int, val int) bool {
-	r := false
-	length := len(nums)
-	if length > 0 {
-		first := nums[0]
-		last := nums[length-1]
-		r = val == first && val == last
-	}
-
-	return r
+	/*
+		r := false
+		length := len(nums)
+		if length > 0 {
+			first := nums[0]
+			last := nums[length-1]
+			r = val == first && val == last
+		}
+		return r
+	*/
+	return len(nums) > 0 && val == nums[0] && val == nums[len(nums)-1]
 }
