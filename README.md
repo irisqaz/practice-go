@@ -8,6 +8,7 @@ Practice the exercises in the following sequence:
 - [ ] helloWorld
 - [ ] same
 - [ ] gte
+- [ ] max
 - [ ] inFirst
 - [ ] inLast
 - [ ] inEnds
@@ -17,4 +18,6 @@ Practice the exercises in the following sequence:
 - [ ] sum
 - [ ] joinStr
 - [ ] intToStr
+- [ ] joinInts
+
 
