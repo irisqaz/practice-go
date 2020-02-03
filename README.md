@@ -13,6 +13,7 @@ Practice the exercises in the following sequence:
 - [ ] inEnds
 - [ ] contains
 - [ ] indexOf
-- [ ] ?
-- [ ] ?
+- [ ] count
+- [ ] sum
+- [ ] joinStr
 

@@ -9,13 +9,29 @@ import (
 	"time"
 )
 
+var words []string
+
+func init() {
+
+	var text = `firm leg fish mind band bark lung rung role soul dull fall lay 
+                news end lock baby mug tick show flu row glue yard`
+
+	words = strings.Fields(text)
+}
+
+// NextWord returns a random word
+func NextWord() string {
+	next := NextInt(0, len(words)-1)
+	return words[next]
+}
+
 // NextInt is the next random integer between a and b
 func NextInt(a, b int) int {
 	rand.Seed(time.Now().UnixNano())
 	return a + rand.Intn(b-a+1)
 }
 
-// NextInts is a slice of length size with random integers betwee a and b
+// NextInts is a slice of length size with random integers between a and b
 func NextInts(a, b, size int) []int {
 
 	ints := make([]int, size)
