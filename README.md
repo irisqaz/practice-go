@@ -9,6 +9,13 @@ Practice the exercises in the following sequence:
 - [ ] same
 - [ ] gte
 - [ ] max
+
+## Strings
+- [ ] joinStr
+- [ ] intToStr
+- [ ] joinInts
+
+## Slices/Arrays
 - [ ] inFirst
 - [ ] inLast
 - [ ] inEnds
@@ -16,8 +23,6 @@ Practice the exercises in the following sequence:
 - [ ] indexOf
 - [ ] count
 - [ ] sum
-- [ ] joinStr
-- [ ] intToStr
-- [ ] joinInts
+
 
 
