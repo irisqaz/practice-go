@@ -6,11 +6,12 @@ import (
 	"github.com/irisqaz/practice-go/test"
 )
 
-// GreaterEqual returns true if val1 is equal to val2
+// GreaterEqual returns true if val1 is greater than or equal to val2
 func GreaterEqual(val1, val2 int) bool {
 
 	return true
 }
+
 func main() {
 
 	fmt.Println()

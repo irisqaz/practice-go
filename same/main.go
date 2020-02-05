@@ -11,6 +11,7 @@ func Same(val1, val2 int) bool {
 
 	return true
 }
+
 func main() {
 
 	fmt.Println()

@@ -8,6 +8,7 @@ import (
 )
 
 // IntToStr returns the string representation of the number
+// Ex: 45 -> "45"
 func IntToStr(num int) string {
 	// try different solutions with
 	// fmt.Sprint
@@ -16,6 +17,7 @@ func IntToStr(num int) string {
 
 	return "?"
 }
+
 func main() {
 
 	fmt.Println()

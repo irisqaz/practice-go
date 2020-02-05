@@ -7,10 +7,13 @@ import (
 )
 
 // Count returns the count of val in nums
+// Ex: [12, 3, 5],  12 -> 1
+//     [2, 10, 10], 10 -> 2
 func Count(nums []int, val int) int {
 
 	return 0
 }
+
 func main() {
 
 	fmt.Println()

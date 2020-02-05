@@ -7,10 +7,13 @@ import (
 )
 
 // InLast returns true if val is the last element of nums
+// Ex: [12, 3, 5], 12 -> false
+//     [2, 4, 10], 10 -> true
 func InLast(nums []int, val int) bool {
 
 	return true
 }
+
 func main() {
 
 	fmt.Println()

@@ -8,10 +8,13 @@ import (
 
 // IndexOf returns the index location of val if it is in nums
 // otherwise it returns -1
+// Ex: [12, 3, 5], 12 ->  0
+//     [2, 4, 10], 5  -> -1
 func IndexOf(nums []int, val int) int {
 
 	return 0
 }
+
 func main() {
 
 	fmt.Println()

@@ -7,10 +7,13 @@ import (
 )
 
 // Sum returns the sum of all the values in nums
+// Ex: [12, 3, 5] -> 20
+//     [2, 4, 10] -> 16
 func Sum(nums []int) int {
 
 	return 0
 }
+
 func main() {
 
 	fmt.Println()

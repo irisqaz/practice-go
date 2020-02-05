@@ -6,11 +6,13 @@ import (
 	"github.com/irisqaz/practice-go/test"
 )
 
-// Max returns the maximum of the two given numbers
+// Max returns the greater of the two given numbers
+// Ex: 36, 22 -> 36
 func Max(val1, val2 int) int {
 
 	return val1
 }
+
 func main() {
 
 	fmt.Println()

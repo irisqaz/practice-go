@@ -7,10 +7,15 @@ import (
 )
 
 // JoinStr returns the two given strings joined by a space
+// Ex: "word1", "word2" -> "word1 word2"
 func JoinStr(w1, w2 string) string {
+	// try different solutions with
+	// +
+	// fmt.Sprintf
 
 	return "?"
 }
+
 func main() {
 
 	fmt.Println()
@@ -48,5 +53,6 @@ func printResult(w1, w2 string, got, want interface{}, isCorrect bool) {
 
 func solution(w1, w2 string) string {
 
-	return w1 + " " + w2
+	//return w1 + " " + w2
+	return fmt.Sprintf("%v %v", w1, w2)
 }

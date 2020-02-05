@@ -7,6 +7,7 @@ import (
 )
 
 // JoinInts returns the string representation of the joined positive numbers
+// Ex: 81, 96 -> "8196"
 func JoinInts(n1, n2 int) string {
 	// try different solutions with
 	// fmt.Sprintf
@@ -14,6 +15,7 @@ func JoinInts(n1, n2 int) string {
 
 	return "?"
 }
+
 func main() {
 
 	fmt.Println()

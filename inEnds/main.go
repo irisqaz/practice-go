@@ -7,10 +7,13 @@ import (
 )
 
 // InEnds returns true if val is the first and last element of nums
+// Ex: [12, 3, 5], 12  -> false
+//     [10, 4, 10], 10 -> true
 func InEnds(nums []int, val int) bool {
 
 	return true
 }
+
 func main() {
 
 	fmt.Println()
