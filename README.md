@@ -6,6 +6,13 @@ Practice the exercises in the following sequence:
       [x] helloWorld
 
 - [x] helloWorld
+
+## Type Conversion
+- [ ] intToFloat
+- [ ] floatToInt
+
+
+
 - [ ] same
 - [ ] gte
 - [ ] max
