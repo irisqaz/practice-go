@@ -5,7 +5,7 @@ Practice the exercises in the following sequence:
     when completed mark the checkbox as
       [x] helloWorld
 
-- [ ] helloWorld
+- [x] helloWorld
 - [ ] same
 - [ ] gte
 - [ ] max

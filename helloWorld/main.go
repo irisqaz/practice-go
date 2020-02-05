@@ -9,7 +9,7 @@ import (
 // HelloWorld returns a string containing "Hello World!"
 func HelloWorld() string {
 
-	return "?"
+	return "Hello World!"
 }
 func main() {
 
