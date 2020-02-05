@@ -44,6 +44,12 @@ func NextInts(a, b, size int) []int {
 
 }
 
+// NextFloat is the next random float64 between a and b
+func NextFloat(size float64) float64 {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Float64() * size
+}
+
 // Equal compares the two arguments for equality and returns true when equal
 func Equal(got, want interface{}) bool {
 	return reflect.DeepEqual(got, want)
