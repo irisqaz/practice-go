@@ -15,7 +15,9 @@ func IntToStr(num int) string {
 	// fmt.Sprintf
 	// strconv.Itoa
 
-	return "?"
+	//return fmt.Sprintf("%v", num)
+	//return strconv.Itoa(num)
+	return fmt.Sprint(num)
 }
 
 func main() {

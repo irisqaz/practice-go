@@ -18,9 +18,9 @@ Practice the exercises in the following sequence:
 - [ ] max
 
 ## Strings
-- [ ] joinStr
-- [ ] intToStr
-- [ ] joinInts
+- [x] joinStr
+- [x] intToStr
+- [x] joinInts
 
 ## Slices/Arrays
 - [ ] inFirst

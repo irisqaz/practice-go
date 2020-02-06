@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/irisqaz/practice-go/test"
 )
@@ -13,7 +14,8 @@ func JoinInts(n1, n2 int) string {
 	// fmt.Sprintf
 	// strconv.Itoa
 
-	return "?"
+	//return fmt.Sprintf("%v%v", n1, n2)
+	return strconv.Itoa(n1) + strconv.Itoa(n2)
 }
 
 func main() {

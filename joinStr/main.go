@@ -13,7 +13,9 @@ func JoinStr(w1, w2 string) string {
 	// +
 	// fmt.Sprintf
 
-	return "?"
+	//return w1 + " " + w2
+	return fmt.Sprintf("%s %s", w1, w2)
+
 }
 
 func main() {
