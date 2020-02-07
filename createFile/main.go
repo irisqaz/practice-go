@@ -26,8 +26,11 @@ func main() {
 	isCorrect := got == nil
 
 	printResult(input, got, want, isCorrect)
-
 	fmt.Println()
+
+	if isCorrect {
+		os.Remove(input)
+	}
 }
 func printResult(fName string, got, want interface{}, isCorrect bool) {
 	strIn := fmt.Sprintf("(%s)", fName)

@@ -6,16 +6,14 @@ Practice the exercises in the following sequence:
       [x] helloWorld
 
 - [x] helloWorld
+- [ ] same
+- [ ] gte
+- [ ] max
 
 ## Type Conversion
 - [ ] intToFloat
 - [ ] floatToInt
-
-
-
-- [ ] same
-- [ ] gte
-- [ ] max
+- [ ] mathMax
 
 ## Strings
 - [x] joinStr
@@ -34,4 +32,5 @@ Practice the exercises in the following sequence:
 ## File input/output
 - [ ] createFile
 - [ ] openReading
+- [ ] writeFile
 
