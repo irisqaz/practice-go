@@ -31,5 +31,7 @@ Practice the exercises in the following sequence:
 - [ ] count
 - [ ] sum
 
-
+## File input/output
+- [ ] createFile
+- [ ] openReading
 
