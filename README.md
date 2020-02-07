@@ -18,6 +18,9 @@ Practice the exercises in the following sequence:
 - [ ] and
 - [ ] or
 
+## int -> bool -> bool
+- [ ] isSameOdd {same, isOdd}
+
 
 ## Type Conversion
 - [ ] intToFloat
