@@ -6,9 +6,18 @@ Practice the exercises in the following sequence:
       [x] helloWorld
 
 - [x] helloWorld
+
+## int -> bool
 - [ ] same
 - [ ] gte
 - [ ] max
+- [ ] isEven
+- [ ] isOdd
+
+## bool -> bool
+- [ ] and
+- [ ] or
+
 
 ## Type Conversion
 - [ ] intToFloat
