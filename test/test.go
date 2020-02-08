@@ -31,6 +31,13 @@ func NextWord() string {
 	return words[next]
 }
 
+// NextString returns a random word
+func NextString() string {
+	start := NextInt(0, len(words)-1)
+	end := NextInt(start, len(words)-1)
+	return text[start:end]
+}
+
 // NextInt is the next random integer between a and b
 func NextInt(a, b int) int {
 	rand.Seed(time.Now().UnixNano())

@@ -13,6 +13,7 @@ Some exercises have a suggestion list `{}` of exercises to do first
 - [ ] intToFloat
 - [ ] floatToInt
 - [ ] byteToRune
+- [x] intToStr
 
 ## int -> bool
 - [ ] same
@@ -42,8 +43,8 @@ Some exercises have a suggestion list `{}` of exercises to do first
 
 ## Strings
 - [x] joinStr
-- [x] intToStr
-- [x] joinInts
+- [x] joinInts {intToStr, joinStr}
+- [ ] hasWSpace {isWhiteSpace}
 
 ## Slices/Arrays
 - [ ] inFirst

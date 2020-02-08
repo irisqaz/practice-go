@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unicode"
 
 	"github.com/irisqaz/practice-go/test"
 )
@@ -9,23 +10,22 @@ import (
 func main() {
 
 	fmt.Println()
-	fmt.Println(test.Rjustified(41, test.Signature(JoinStr)))
+	fmt.Println(test.Rjustified(41, test.Signature(HasWSpace)))
 
 	for i := 0; i < 5; i++ {
 
-		w1 := test.NextWord()
-		w2 := test.NextWord()
+		input := test.NextString()
 
-		got := JoinStr(w1, w2)
-		want := solution(w1, w2)
+		got := HasWSpace(input)
+		want := solution(input)
 		isCorrect := got == want
 
-		printResult(w1, w2, got, want, isCorrect)
+		printResult(input, got, want, isCorrect)
 	}
 	fmt.Println()
 }
-func printResult(w1, w2 string, got, want interface{}, isCorrect bool) {
-	strIn := fmt.Sprintf("(%v, %v)", w1, w2)
+func printResult(w1 string, got, want interface{}, isCorrect bool) {
+	strIn := fmt.Sprintf("(%q)", w1)
 	strIn = test.Rjustified(25, strIn)
 	strWant := test.Ljustified(20, want)
 	strGot := test.Ljustified(10, got)
@@ -41,8 +41,13 @@ func printResult(w1, w2 string, got, want interface{}, isCorrect bool) {
 	fmt.Println()
 }
 
-func solution(w1, w2 string) string {
-
-	//return w1 + " " + w2
-	return fmt.Sprintf("%v %v", w1, w2)
+func solution(str string) bool {
+	r := false
+	for _, ch := range str {
+		if unicode.IsSpace(ch) {
+			r = true
+			break
+		}
+	}
+	return r
 }
