@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unicode"
 
 	"github.com/irisqaz/practice-go/test"
 )
@@ -9,22 +10,20 @@ import (
 func main() {
 
 	fmt.Println()
-	fmt.Println(test.Rjustified(41, test.Signature(IntToFloat)))
+	fmt.Println(test.Rjustified(42, test.Signature(IsWhiteSpace)))
+	for i := 1; i <= 5; i++ {
+		char := test.NextChar()
 
-	for i := 0; i < 5; i++ {
-
-		input := test.NextInt(-20, 20)
-
-		got := IntToFloat(input)
-		want := solution(input)
+		got := IsWhiteSpace(char)
+		want := solution(char)
 		isCorrect := got == want
 
-		printResult(input, got, want, isCorrect)
+		printResult(char, got, want, isCorrect)
 	}
 	fmt.Println()
 }
-func printResult(input int, got, want interface{}, isCorrect bool) {
-	strIn := fmt.Sprintf("(%v)", input)
+func printResult(val1, got, want interface{}, isCorrect bool) {
+	strIn := fmt.Sprintf("(%q)", val1)
 	strIn = test.Rjustified(25, strIn)
 	strWant := test.Ljustified(20, want)
 	strGot := test.Ljustified(10, got)
@@ -40,7 +39,6 @@ func printResult(input int, got, want interface{}, isCorrect bool) {
 	fmt.Println()
 }
 
-func solution(num int) float64 {
-
-	return float64(num)
+func solution(char byte) bool {
+	return unicode.IsSpace(rune(char))
 }

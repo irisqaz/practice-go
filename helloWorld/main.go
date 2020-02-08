@@ -6,13 +6,7 @@ import (
 	"github.com/irisqaz/practice-go/test"
 )
 
-// HelloWorld returns a string containing "Hello World!"
-func HelloWorld() string {
-
-	return "Hello World!"
-}
 func main() {
-
 	fmt.Println()
 	fmt.Println(test.Rjustified(41, test.Signature(HelloWorld)))
 

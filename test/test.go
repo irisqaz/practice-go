@@ -10,13 +10,19 @@ import (
 )
 
 var words []string
+var text string
 
 func init() {
 
-	var text = `firm leg fish mind band bark lung rung role soul dull fall lay 
-                news end lock baby mug tick show flu row glue yard`
+	text = "firm leg\tfish mind\nband bark lung rung role\tsoul dull fall lay\nnews end lock\tbaby mug tick\tshow flu\nrow glue yard"
 
 	words = strings.Fields(text)
+}
+
+// NextChar returns a random character
+func NextChar() byte {
+	next := NextInt(0, len(text)-1)
+	return text[next]
 }
 
 // NextWord returns a random word
@@ -45,9 +51,9 @@ func NextInts(a, b, size int) []int {
 }
 
 // NextFloat is the next random float64 between a and b
-func NextFloat(size float64) float64 {
+func NextFloat(a, b float64) float64 {
 	rand.Seed(time.Now().UnixNano())
-	return rand.Float64() * size
+	return a + rand.Float64()*(b-a)
 }
 
 // Equal compares the two arguments for equality and returns true when equal

@@ -9,15 +9,15 @@ import (
 func main() {
 
 	fmt.Println()
-	fmt.Println(test.Rjustified(42, test.Signature(Same)))
+	fmt.Println(test.Rjustified(42, test.Signature(DiffFloat)))
 	for i := 1; i <= 5; i++ {
-		val1 := test.NextInt(0, 100)
-		val2 := test.NextInt(0, 100)
-		if val1%2 == 0 {
-			val2 = val1
+		val1 := test.NextFloat(-10, 10)
+		val2 := test.NextFloat(-10, 10)
+		if i%2 == 0 {
+			val2 = val1 - .0009
 		}
 
-		got := Same(val1, val2)
+		got := DiffFloat(val1, val2)
 		want := solution(val1, val2)
 		isCorrect := got == want
 
@@ -26,10 +26,10 @@ func main() {
 	fmt.Println()
 }
 func printResult(val1, val2, got, want interface{}, isCorrect bool) {
-	strIn := fmt.Sprintf("(%v, %v)", val1, val2)
+	strIn := fmt.Sprintf("(%.5f, %.5f)", val1, val2)
 	strIn = test.Rjustified(25, strIn)
 	strWant := test.Ljustified(20, want)
-	strGot := test.Ljustified(10, got)
+	strGot := test.Ljustified(22, got)
 
 	if isCorrect {
 		strGot = test.Green(strGot)
@@ -42,7 +42,14 @@ func printResult(val1, val2, got, want interface{}, isCorrect bool) {
 	fmt.Println()
 }
 
-func solution(val1, val2 int) bool {
+func solution(val1, val2 float64) bool {
 
-	return val1 == val2
+	return abs(val1-val2) < .001
+}
+
+func abs(val float64) float64 {
+	if val < 0 {
+		return -val
+	}
+	return val
 }

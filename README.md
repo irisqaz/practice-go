@@ -5,12 +5,18 @@ Practice the exercises in the following sequence:
     when completed mark the checkbox as
       [x] helloWorld
 
+Some exercises have a suggestion list `{}` of exercises to do first
+
 - [x] helloWorld
+
+## Type Conversion
+- [ ] intToFloat
+- [ ] floatToInt
+- [ ] byteToRune
 
 ## int -> bool
 - [ ] same
 - [ ] gte
-- [ ] max
 - [ ] isEven
 - [ ] isOdd
 
@@ -21,11 +27,18 @@ Practice the exercises in the following sequence:
 ## int -> bool -> bool
 - [ ] isSameOdd {same, isOdd}
 
+## int -> int
+- [ ] max
+- [ ] mathMax {intToFloat, floatToInt}
 
-## Type Conversion
-- [ ] intToFloat
-- [ ] floatToInt
-- [ ] mathMax
+## float -> float
+- [ ] absFloat
+
+## float -> bool
+- [ ] diffFloat
+
+## rune -> bool
+- [ ] isWhiteSpace {byteToRune}
 
 ## Strings
 - [x] joinStr
