@@ -45,6 +45,7 @@ Some exercises have a suggestion list `{}` of exercises to do first
 - [x] joinStr
 - [x] joinInts {intToStr, joinStr}
 - [ ] hasWSpace {isWhiteSpace}
+- [ ] htmlElement {joinStr}
 
 ## Slices/Arrays
 - [ ] inFirst
