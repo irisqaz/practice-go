@@ -22,7 +22,7 @@ func main() {
 
 	for i := 0; i < 5; i++ {
 
-		input := test.NextFloat(10)
+		input := test.NextFloat(0, 10)
 
 		got := FloatToInt(input)
 		want := solution(input)
