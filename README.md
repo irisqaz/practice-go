@@ -46,12 +46,18 @@ Some exercises have a suggestion list `{}` of exercises to do first
 - [x] joinInts {intToStr, joinStr}
 - [ ] hasWSpace {isWhiteSpace}
 - [ ] htmlElement {joinStr}
+- [ ] substring {between}
+- [ ] hasPrefix 
+- [ ] hasSuffix 
 
 ## Slices/Arrays
 - [ ] inFirst
 - [ ] inLast
 - [ ] inEnds
 - [ ] contains
+- [ ] between
+- [ ] isPrefix {between}
+- [ ] isSuffix {between}
 - [ ] indexOf
 - [ ] count
 - [ ] sum

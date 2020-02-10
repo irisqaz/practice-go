@@ -6,14 +6,6 @@ import (
 	"github.com/irisqaz/practice-go/test"
 )
 
-// InFirst returns true if val is the first element of nums
-// Ex: [12, 3, 5], 12 -> true
-//     [2, 4, 10], 5  -> false
-func InFirst(nums []int, val int) bool {
-
-	return true
-}
-
 func main() {
 
 	fmt.Println()
@@ -28,7 +20,7 @@ func main() {
 
 		got := InFirst(input, val)
 		want := solution(input, val)
-		isCorrect := test.Equal(got, want)
+		isCorrect := got == want
 
 		printResult(input, val, got, want, isCorrect)
 	}

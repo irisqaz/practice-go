@@ -10,19 +10,20 @@ import (
 )
 
 var words []string
-var text string
+var text1 string
+var text2 string
 
 func init() {
 
-	text = "firm leg\tfish mind\nband bark lung rung role\tsoul dull fall lay\nnews end lock\tbaby mug tick\tshow flu\nrow glue yard"
+	text1 = "firm leg\tfish mind\nband bark lung rung role\tsoul dull fall lay news end lock\tbaby mug tick show flu\nrow glue yard"
 
-	words = strings.Fields(text)
+	words = strings.Fields(text1)
 }
 
 // NextChar returns a random character
 func NextChar() byte {
-	next := NextInt(0, len(text)-1)
-	return text[next]
+	next := NextInt(0, len(text1)-1)
+	return text1[next]
 }
 
 // NextWord returns a random word
@@ -31,11 +32,26 @@ func NextWord() string {
 	return words[next]
 }
 
-// NextString returns a random word
+// NextString returns a string of random size
 func NextString() string {
-	start := NextInt(0, len(words)-1)
-	end := NextInt(start, len(words)-1)
-	return text[start:end]
+	last := len(text1) - 1
+	start := NextInt(0, last/2)
+	end := NextInt(start, last)
+	if end-start > 10 {
+		end = start + 10
+	}
+	return text1[start:end]
+}
+
+// StringOfSize returns a random string of length 'size' or less
+func StringOfSize(size int) string {
+	last := len(text1) - 1
+	start := NextInt(0, last/2)
+	end := start + size
+	if end > last {
+		end = last
+	}
+	return text1[start:end]
 }
 
 // NextInt is the next random integer between a and b
@@ -81,6 +97,11 @@ func Green(arg string) string {
 // Yellow converts a string to display as a yellow string
 func Yellow(arg string) string {
 	return fmt.Sprintf("\033[1;33m%s\033[0m", arg)
+}
+
+// Quote returns string str in quotes
+func Quote(str string) string {
+	return fmt.Sprintf("%q", str)
 }
 
 // Rjustified converts arg to its string representation and justifed to the right by size spaces
