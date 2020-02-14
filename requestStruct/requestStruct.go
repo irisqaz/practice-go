@@ -7,9 +7,9 @@ type Request struct {
 	protocol string
 }
 
-// RequestStruct returns a pointer to a Request
+// NewRequest returns a pointer to a Request
 // Ex: "GET /hello.html HTTP/1.1" -> &Request{"GET", "/hello.html", "HTTP/1.1"}
-func RequestStruct(str string) *Request {
+func NewRequest(str string) *Request {
 
 	return nil
 }

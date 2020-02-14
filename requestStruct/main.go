@@ -9,7 +9,7 @@ import (
 func main() {
 
 	fmt.Println()
-	fmt.Println(test.Rjustified(41, test.Signature(RequestStruct)))
+	fmt.Println(test.Rjustified(41, test.Signature(NewRequest)))
 
 	input := []string{
 		"GET /hello.html HTTP/1.1",
@@ -18,7 +18,7 @@ func main() {
 	}
 	for _, s := range input {
 
-		got := RequestStruct(s)
+		got := NewRequest(s)
 		want := solution(s)
 		isCorrect := got == want
 
