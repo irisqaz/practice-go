@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // Request is a minimal HTTP request
 type Request struct {
 	method   string
@@ -10,6 +12,7 @@ type Request struct {
 // NewRequest returns a pointer to a Request
 // Ex: "GET /hello.html HTTP/1.1" -> &Request{"GET", "/hello.html", "HTTP/1.1"}
 func NewRequest(str string) *Request {
-
-	return nil
+	var method, path, prot string
+	fmt.Sscanf(str, "%s %s %s", &method, &path, &prot)
+	return &Request{method, path, prot}
 }
