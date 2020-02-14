@@ -70,3 +70,5 @@ Some exercises have a suggestion list `{}` of exercises to do first
 - [ ] openReading
 - [ ] writeFile
 
+## Structs
+- [ ] requestStruct
