@@ -9,6 +9,9 @@ Some exercises have a suggestion list `{}` of exercises to do first
 
 - [x] helloWorld
 
+## numbers
+- [ ] numbers
+
 ## Type Conversion
 - [ ] intToFloat
 - [ ] floatToInt
