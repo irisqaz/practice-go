@@ -72,3 +72,4 @@ Some exercises have a suggestion list `{}` of exercises to do first
 
 ## Structs
 - [ ] requestStruct
+- [ ] contactStruct
