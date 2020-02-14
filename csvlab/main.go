@@ -16,7 +16,7 @@ func main() {
 	// print(employee_list)
 }
 
-func readEmployees(filename string) []map[string]string {
+func readEmployees(filename string) []record {
 	//csv.register_dialect('empDialect', skipinitialspace=True, strict=True)
 	//employee_file = csv.DictReader(open(csv_file_location), dialect = 'empDialect')
 	f, _ := os.Open(filename)
@@ -27,15 +27,23 @@ func readEmployees(filename string) []map[string]string {
 	// for data in employee_file:
 	//   employee_list.append(data)
 	// return employee_list
-	list := []map[string]string{}
+	//list := []map[string]string{}
+	list := []record{}
 	for _, l := range employeeList {
-		record := map[string]string{}
+		//record := map[string]string{}
 		//clefmt.Println(l)
-		record["Department"] = l[0]
-		record["Username"] = l[1]
-		record["Fullname"] = l[2]
-		list = append(list, record)
+		// record["Department"] = l[0]
+		// record["Username"] = l[1]
+		// record["Fullname"] = l[2]
+
+		list = append(list, record{l[0], l[1], l[2]})
 	}
 	return list
 
+}
+
+type record struct {
+	dept     string
+	username string
+	fullname string
 }
