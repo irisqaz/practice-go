@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 
 	"github.com/irisqaz/practice-go/test"
 )
@@ -20,7 +21,7 @@ func main() {
 
 		got := NewContact(s)
 		want := solution(s)
-		isCorrect := got == want
+		isCorrect := reflect.DeepEqual(got, want)
 
 		printResult(s, got, want, isCorrect)
 	}
