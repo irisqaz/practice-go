@@ -71,5 +71,5 @@ Some exercises have a suggestion list `{}` of exercises to do first
 - [ ] writeFile
 
 ## Structs
-- [ ] requestStruct
-- [ ] contactStruct
+- [x] requestStruct
+- [x] contactStruct
