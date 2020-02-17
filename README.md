@@ -75,3 +75,5 @@ Practice the exercises.  The exercises build upon previous exercises and may be 
 
 ## Concurrency
 - [ ] ?
+- [x] requestStruct
+- [x] contactStruct
