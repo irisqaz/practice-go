@@ -1,11 +1,10 @@
 # practice-go
 
-Practice the exercises in the following sequence:
+Practice the exercises.  The exercises build upon previous exercises and may be shown in braces `{}`.
 
     when completed mark the checkbox as
       [x] helloWorld
 
-Some exercises have a suggestion list `{}` of exercises to do first
 
 - [x] helloWorld
 
@@ -73,3 +72,6 @@ Some exercises have a suggestion list `{}` of exercises to do first
 ## Structs
 - [ ] requestStruct
 - [ ] contactStruct
+
+## Concurrency
+- [ ] ?
