@@ -1,8 +1,10 @@
 package test
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
+	"net/http"
 	"reflect"
 	"runtime"
 	"strings"
@@ -128,4 +130,46 @@ func Signature(f interface{}) string {
 	name = strings.Split(name, ".")[1]
 	name = Yellow(name)
 	return name + sign
+}
+
+func prettyPrint(req *http.Request) {
+	e := reflect.ValueOf(req).Elem()
+
+	for i := 0; i < e.NumField(); i++ {
+		f := e.Field(i)
+		if f.CanSet() { // only exported fields
+			name := e.Type().Field(i).Name
+			value := f.Interface()
+			fmt.Printf("%v: %v \n", name, value)
+		}
+	}
+}
+
+func printStruct(s interface{}, names bool) string {
+	v := reflect.ValueOf(s)
+	t := v.Type()
+	// To avoid panic if s is not a struct:
+	if t.Kind() != reflect.Struct {
+		return fmt.Sprint(s)
+	}
+
+	b := &bytes.Buffer{}
+	b.WriteString(t.Name() + " {\n")
+	for i := 0; i < v.NumField(); i++ {
+		b.WriteString("  ")
+		v2 := v.Field(i)
+		if names {
+			b.WriteString(t.Field(i).Name)
+			b.WriteString(": ")
+		}
+		if v2.CanInterface() {
+			if st, ok := v2.Interface().(fmt.Stringer); ok {
+				b.WriteString(st.String())
+				continue
+			}
+		}
+		fmt.Fprint(b, v2, "\n")
+	}
+	b.WriteString("}")
+	return b.String()
 }
