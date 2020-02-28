@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
@@ -9,6 +10,20 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-func handler1(resp http.ResponseWriter, req *http.Request) {
+func handler1(body http.ResponseWriter, req *http.Request) {
+	doc := `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        
+    </body>
+    </html>
+    `
 
+	fmt.Fprint(body, doc)
 }
