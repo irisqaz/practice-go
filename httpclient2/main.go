@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// url := mypkg.Prompt("URL")
-	url := "http://example.com/"
+	url := "http://localhost:8080/"
 	// create http request
 	//req, _ := http.NewRequest("GET", url, nil)
 
