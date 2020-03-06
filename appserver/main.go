@@ -27,6 +27,7 @@ Done Today: <input type="text" name="done" value="%s"><br>
 `
 
 func main() {
+	fmt.Println("Appserver listening on port 8080 ...")
 	http.HandleFunc("/", handler1)
 	http.ListenAndServe(":8080", nil)
 }
