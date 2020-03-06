@@ -18,7 +18,10 @@ var doc = `<!DOCTYPE html>
     <title>Document</title>
 </head>
 <body>
-<p>%s</p>
+<form action="/" method="post">
+Done Today: <input type="text" name="done" value="%s"><br>
+<input type="submit">
+</form>
 </body>
 </html>
 `
