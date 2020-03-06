@@ -42,12 +42,12 @@ func handler1(rw http.ResponseWriter, req *http.Request) {
 }
 
 func get(rw http.ResponseWriter) {
-	done = mydb.Done
+	done = mydb.Get()
 	fmt.Fprintf(rw, doc, done)
 }
 
 func post(rw http.ResponseWriter, req *http.Request) {
 	done = req.FormValue("done")
-	mydb.Done = done
+	mydb.Set(done)
 	fmt.Fprintf(rw, doc, done)
 }
