@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/irisqaz/practice-go/mydb"
 )
 
-var done string
+var done []string
 
 var doc = `<!DOCTYPE html>
 <html lang="en">
@@ -19,9 +20,12 @@ var doc = `<!DOCTYPE html>
 </head>
 <body>
 <form action="/" method="post">
-Done Today: <input type="text" name="done" value="%s"><br>
+Done Today: <input type="text" name="done" value=""> 
 <input type="submit">
 </form>
+<ul>
+%s
+</ul>
 </body>
 </html>
 `
@@ -43,12 +47,15 @@ func handler1(rw http.ResponseWriter, req *http.Request) {
 }
 
 func get(rw http.ResponseWriter) {
-	done = mydb.Get()
-	fmt.Fprintf(rw, doc, done)
+	l := mydb.List()
+	str := strings.Join(l, "\n")
+	fmt.Fprintf(rw, doc, str)
 }
 
 func post(rw http.ResponseWriter, req *http.Request) {
-	done = req.FormValue("done")
-	mydb.Set(done)
-	fmt.Fprintf(rw, doc, done)
+	newDone := req.FormValue("done")
+	mydb.Add(newDone)
+	l := mydb.List()
+	str := strings.Join(l, "\n")
+	fmt.Fprintf(rw, doc, str)
 }
