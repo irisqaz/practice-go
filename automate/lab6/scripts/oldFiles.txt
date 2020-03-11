@@ -1,0 +1,3 @@
+/Users/iris314/practice/practice-go/automate/lab6/data/janecsv.csv
+/Users/iris314/practice/practice-go/automate/lab6/data/janetxt.txt
+/Users/iris314/practice/practice-go/automate/lab6/data/janepdf.pdf
